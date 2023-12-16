@@ -89,13 +89,16 @@ main {
   text-align: justify;
 }
 
-.hero-content p a {
-  color: #fff;
-}
+
 
 .hero-image {
   flex: 1;
   margin-top: 20px;
+}
+
+.hero-image p , .hero-image p a{
+  font-size: 14px; /* Adjusted from 18px */
+  
 }
 
 .hero-image img {
@@ -206,6 +209,11 @@ footer a:hover {
     border-radius: 8px;
   }
 
+  .hero-image p , .hero-image p a{
+    font-size: 12px; /* Adjusted from 18px */
+    
+  }
+
   section {
     flex-direction: column;
   }
@@ -216,6 +224,12 @@ footer a:hover {
 
   .number-box {
     width: 100%;
+  }
+
+  
+
+  footer p {
+    font-size: 14px; /* Adjusted from 18px */
   }
 }
 
