@@ -123,6 +123,9 @@ section {
 }
 
 .number-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: linear-gradient(180deg, #007bff 0%, #0056b3 100%);
   color: #fff;
   border-radius: 8px;
