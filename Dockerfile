@@ -1,30 +1,24 @@
-# Use the official Node.js image as the base image
-FROM node:lts-alpine as builder
+# Use an official Node.js runtime as the base image
+FROM node:14
 
-# Create app directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Install app dependencies
-COPY package*.json ./
+# Copy package.json and package-lock.json to the container
+COPY package.json ./
 
+# Install dependencies
 RUN npm install
+RUN npm ci --production
 
-
-
-# Bundle app source
+# Copy the server.js file to the container
 COPY . .
 
-# Run the build script
-RUN npm run build
+RUN ls -la
 
-# Create a new stage using the official Nginx image
-FROM nginx:alpine
 
-# Copy the built files from the builder stage to the Nginx server
-COPY --from=builder /app/public /usr/share/nginx/html
+# Expose the port that your application listens on
+EXPOSE 8081
 
-# Expose the default Nginx port
-EXPOSE 8080
-
-# Start Nginx when the container runs
-CMD ["nginx", "-g", "daemon off;"]
+# Start the Node.js application
+CMD [ "node", "server.js" ]
