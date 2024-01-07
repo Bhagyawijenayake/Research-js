@@ -24,7 +24,7 @@ FROM nginx:alpine
 COPY --from=builder /app/public /usr/share/nginx/html
 
 # Expose the default Nginx port
-EXPOSE 80
+EXPOSE 8080
 
 # Start Nginx when the container runs
 CMD ["nginx", "-g", "daemon off;"]
