@@ -1,21 +1,14 @@
 {
-  "name": "research",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "research-js",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build": "webpack --mode production"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "webpack-cli": "^5.1.4"
+    "vite": "^5.0.8"
   }
 }
