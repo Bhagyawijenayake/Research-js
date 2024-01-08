@@ -1,4 +1,6 @@
-FROM node:lts-alpine as builder
+FROM node:20-alpine as builder
+
+
 # Create app directory
 WORKDIR /app
 
@@ -13,7 +15,9 @@ COPY . .
 RUN npm run build
 
 
-FROM nginx:alpine
+FROM nginx:1.25-alpine
+
+
 
 
 COPY --from=builder /app/dist /usr/share/nginx/html
