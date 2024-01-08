@@ -6,9 +6,14 @@ const numbersList = document.getElementById("numbers-container");
 
 // Fetch data from the API endpoint asynchronously
 async function fetchData() {
-  const response = await fetch(url);
-  const data = await response.json();
-  takeData(data);
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    takeData(data);
+  } catch (error) {
+    console.error('Error:', error);
+    numbersList.innerHTML = '<p>An error occurred while fetching data.</p>';
+  }
 }
 
 function takeData(data) {
